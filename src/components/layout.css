@@ -1,0 +1,14 @@
+.nav-bar {
+  padding: 0 1%;
+}
+
+.active {
+  color: rgb(24, 24, 54);
+  text-decoration: underline;
+}
+
+.position-centre {
+  display: flex;
+  justify-content: center; /* центрирует контент по горизонтали */
+  align-items: center; /* центрирует контент по вертикали */
+}
