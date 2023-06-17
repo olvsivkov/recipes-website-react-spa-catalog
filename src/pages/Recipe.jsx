@@ -1,6 +1,9 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect} from "react";
 import { getMealById } from "../api";
+import { Preloader } from "../components/preloader";
+
+import "../index.css"
 
 function getIngredientsList(meal) {
   const ingredients = [];
@@ -14,9 +17,10 @@ function getIngredientsList(meal) {
     }
 
     ingredients.push(
-      <li key={i}>
-        {ingredientValue} - {meal[`strMeasure${i}`]}
-      </li>
+      <div key={i} className="ingredient-container " >
+        <div className="ingredient">{ingredientValue}</div>
+        <div className="ingredients-value">{meal[`strMeasure${i}`]}</div>
+      </div>
     );
   }
   return ingredients;
@@ -25,14 +29,16 @@ function getIngredientsList(meal) {
 function Recipe() {
   const {ID} = useParams();
   const [mealRecipe, setMealRecipe] = useState([]);
+  const navigate = useNavigate();
   
   useEffect(() => {
     getMealById(ID).then((data) => setMealRecipe(data.meals ? data.meals[0] : null));
   }, [ID]);
 
+  const youtubeId = mealRecipe && mealRecipe.strYoutube ? mealRecipe.strYoutube.slice(-11) : null;
 
   if (!mealRecipe) {
-    return <div>Loading...</div>;
+    return <Preloader/>;
   }
 
   return (
@@ -40,10 +46,10 @@ function Recipe() {
       <div className="col s12">
         <div className="card">
           <div className="card-image">
-            <img src={mealRecipe.strMealThumb} alt={mealRecipe.strMeal}/>
-            <span className="card-title">{mealRecipe.strMeal}</span>
+            <img className="recipe-image" src={mealRecipe.strMealThumb} alt={mealRecipe.strMeal}/>
           </div>
           <div className="card-content">
+            <span className="card-title">{mealRecipe.strMeal}</span>
             <p>Ares: {mealRecipe.strArea}</p>
             <p>Category: {mealRecipe.strCategory}</p>
             <p>{mealRecipe.strInstructions}</p>
@@ -51,10 +57,19 @@ function Recipe() {
           <div className="card-action">
             {getIngredientsList(mealRecipe)}
           </div>
-          <div className="card-image">
-            <video className="responsive-video" controls>
-            <source src={mealRecipe.strYoutube} type="video/mp4"/>
-            </video>
+          <div className="card-image video">
+            <iframe
+              title="YouTube video player"
+              max-width="560"
+              max-height="315"
+              src={`https://www.youtube.com/embed/${youtubeId}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{margin: 'auto', width: '560px !important'}}
+            />
+          </div>
+          <div className="card-content">
+            <button onClick={() => navigate(-1)} className="btn" >Go back</button>
           </div>
         </div>
       </div>

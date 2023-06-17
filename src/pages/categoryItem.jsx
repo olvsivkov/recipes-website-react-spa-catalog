@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import "../index.css"
 
 function CategoryItem(props){
-  const {idCategory, strCategory, strCategoryDescription, strCategoryThumb} = props
+  const { strCategory, strCategoryDescription, strCategoryThumb} = props
   return <div className="card">
     <div className="card-image">
       <img src={strCategoryThumb} alt={strCategory}/>
