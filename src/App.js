@@ -4,7 +4,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, B
 import { Home } from './pages/home';
 import { Category } from './pages/Category';
 import { Recipe } from './pages/Recipe';
-
+/*
 const router = createBrowserRouter(createRoutesFromElements(
 <BrowserRouter>
   <Routes>
@@ -20,6 +20,21 @@ const router = createBrowserRouter(createRoutesFromElements(
 function App() {
   return (
     <RouterProvider router={router}/>
+  );
+}
+*/
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path='category/:name' element={<Category/>}/>
+          <Route path='meal/:ID' element={<Recipe/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
