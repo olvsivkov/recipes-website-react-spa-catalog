@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/recipes-website-react-spa-catalog/static/css/main.7df63478.css",
-    "main.js": "/recipes-website-react-spa-catalog/static/js/main.971eb0f8.js",
+    "main.js": "/recipes-website-react-spa-catalog/static/js/main.a61ab213.js",
     "index.html": "/recipes-website-react-spa-catalog/index.html",
     "main.7df63478.css.map": "/recipes-website-react-spa-catalog/static/css/main.7df63478.css.map",
-    "main.971eb0f8.js.map": "/recipes-website-react-spa-catalog/static/js/main.971eb0f8.js.map"
+    "main.a61ab213.js.map": "/recipes-website-react-spa-catalog/static/js/main.a61ab213.js.map"
   },
   "entrypoints": [
     "static/css/main.7df63478.css",
-    "static/js/main.971eb0f8.js"
+    "static/js/main.a61ab213.js"
   ]
 }
