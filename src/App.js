@@ -6,7 +6,7 @@ import { Category } from './pages/Category';
 import { Recipe } from './pages/Recipe';
 
 const router = createBrowserRouter(createRoutesFromElements(
-<BrowserRouter basename="/recipes-website-react-spa-catalog">
+<BrowserRouter>
   <Routes>
     <Route path='/' element={<Layout/>}>
       <Route index element={<Home/>}/>
