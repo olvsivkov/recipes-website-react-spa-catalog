@@ -26,7 +26,6 @@ function App() {
 
 function App() {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home/>}/>
@@ -34,7 +33,6 @@ function App() {
           <Route path='meal/:ID' element={<Recipe/>}/>
         </Route>
       </Routes>
-    </BrowserRouter>
   );
 }
 
