@@ -15,6 +15,7 @@ You can go into each category and see the recipe options in this category.
 You can enter each recipe and see the cooking method, the necessary ingredients and a video guide (some videos do not work).
 On each page, a function is implemented - to go back. There is also a Home button in the header to return to the main page. 
 The project is written in react using functional programming. Single Page Application Project.
+To make a deployment of a site, that uses routing, on gh-pages, the createHashRouter method is used
 
 _________________________________________________________________________
 
@@ -35,3 +36,4 @@ _________________________________________________________________________
 В каждый рецепт можно войти и посмотреть способ приготовления блюда, необходимые ингридиенты и видео-гайд (некоторые видео не работают).
 На каждой странице реализована функция - вернуься обратно. Так же в header есть кнопка Home чтоб вернуться на главную страницу. 
 Проект написан на реакт с использованием функционального программирования. Проект Single Page Application.
+Чтоб сделать деплой сайта, который использует роутинг, на gh-pages используется метод createHashRouter
